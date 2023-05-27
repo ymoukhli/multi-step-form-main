@@ -1,0 +1,103 @@
+@font-face {
+    font-family: ubuntu;
+    src: url(./assets/fonts/Ubuntu-Regular.ttf);
+}
+@font-face {
+    font-family: ubuntu_medium;
+    src: url(./assets/fonts/Ubuntu-Medium.ttf);
+}
+@font-face {
+    font-family: ubuntu_bold;
+    src: url(./assets/fonts/Ubuntu-Bold.ttf);
+}
+body {
+    font-family: ubuntu, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f0f6ff;
+    background-image: url("./assets/images/bg-sidebar-mobile.svg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+h2 {
+    font-family: ubuntu_bold;
+}
+* {
+    padding: 0px;
+    margin: 0px;
+}
+label {
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    margin: 0 auto;
+    width: 80vw;
+}
+
+.sidebar {
+    display: flex;
+    margin: 26px auto 30px;
+    justify-content: center;
+    gap: 16px;
+    /* margin: 0 auto; */
+}
+main {
+    display: flex;
+    flex-direction: column;
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px -7px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    padding: 38px 18px 42px
+}
+
+.stepNav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    height:81px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.stepInfo {
+    display: none;
+}
+.step_button > div {
+    background-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    border: 2px solid #FAFBFF;
+    color:#FAFBFF;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    padding-left: 12px;
+    padding-top: 6px;
+}
+
+.step_Description {
+    /* marine blue */
+    color: #96A0AB;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 39px
+}
+
+form input {
+    border: 1px solid #D6D9E6;
+    border-radius: 6px;
+    margin-top: 7px;
+    margin-bottom: 31px;
+    color: #03275C;
+    padding: 10px;
+    font-family: ubuntu_medium;
+}
+
+.next_button {
+    margin: 21px 13px;
+    padding: 10px;
+    background: #03275C;
+    border-radius: 4px;
+    color: white;
+}

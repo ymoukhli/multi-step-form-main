@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+  <link rel="font" href="">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar start -->
+  <div class="container">
+
+  <aside class="sidebar">
+    <div id="step_one_button" class="step_button">
+      <div>1</div>
+      <div class="stepInfo">
+        <p>Step 1</p>
+        <p>Your info</p>
+      </div>
+    </div>
+    <div id="step_two_button" class="step_button">
+      <div>2</div>
+      <div class="stepInfo">
+        <p>Step 2</p>
+        <p>Select plan</p>
+      </div>
+    </div>
+    <div id="step_three_button" class="step_button">
+      <div>3</div>
+      <div class="stepInfo">
+        <p>Step 3</p>
+        <p>Add-ons</p>
+      </div>
+    </div>
+    <div id="step_four_button" class="step_button">
+      <div>4</div>
+      <div class="stepInfo">
+        <p>Step 4</p>
+        <p>Summary</p>
+      </div>
+    </div>
+  </aside>
+  <!-- Sidebar end -->
+
+  <!-- Step 1 start -->
+  <main>
+    <div>
+      <h2>Personal info</h2>
+      <p class="step_Description">Please provide your name, email address, and phone number.</p>
+    </div>
+    <form>
+      <label for="name">Name
+        <input title="name" name="name" type="text" placeholder="e.g. Stephen king">
+      </label>
+      
+      <label for="email">Email Address
+        <input title="email" name="email" type="text" placeholder="e.g. stephenking@lorem.com">
+      </label>
+      
+      <label for="phone number">Phone Number
+        <input title="phone number" name="phone number" type="text" placeholder="e.g. +1 234 567 890">
+      </label>
+    </form>
+    <div class="stepNav">
+      <button class="next_button" id="next_Button">Next Step</button>
+    </div>
+  </main>
+</div>
+</body>
+</html>
