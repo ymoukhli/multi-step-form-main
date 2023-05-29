@@ -1,0 +1,33 @@
+.backButton {
+    color: rgba(0, 0, 0, 0.4);
+    background: none;
+    border: none;
+}
+
+.backButton:hover {
+    color: #03275C;
+}
+.button {
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+.nextButton {
+    
+    color: #F0F6FF;
+    background-color: #03275C;
+    composes: button;
+}
+
+.nextButton:hover {
+    background-color: #054199;
+}
+
+
+.continueButton {
+    background: #160AFF;
+    composes: button;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+}

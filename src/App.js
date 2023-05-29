@@ -4,6 +4,28 @@ import { UserForm } from './components/UserForm';
 import { SideBar } from './components/SideBar';
 import { Title } from './components/Title';
 import { PlanPicker } from './components/PlanPicker';
+import { AddOns } from './components/AddOns';
+import { Nav } from './components/Nav';
+import style from './styles/app.module.css'
+function App() {  
+  const [currentStep, setCurrentStep] = useState(2);
+  const {title, description, component} = steps[currentStep];
+  return (
+    <>
+      <SideBar />
+      <div className={style.container}>
+        <Title title={title} description={description}/>
+        <form>
+          {component}
+        </form>
+      </div>
+        <Nav step={currentStep} setStep={setCurrentStep}/>
+    </>
+  );
+}
+
+export default App;
+
 const steps = [
     {
       title: "Personal info",
@@ -18,7 +40,7 @@ const steps = [
     {
       title: "Pick add-ons",
       description: "Add-ons help enhace your gaming experience",
-      component: <UserForm/>
+      component: <AddOns/>
     },
     {
       title: "Finishing up",
@@ -26,16 +48,3 @@ const steps = [
       component: <UserForm/>
     },
   ]
-function App() {  
-  const [currentStep, setCurrentStep] = useState(0);
-  const {title, description, component} = steps[currentStep];
-  return (
-    <>
-      <SideBar />
-      <Title title={title} description={description}/>
-      {component}
-    </>
-  );
-}
-
-export default App;

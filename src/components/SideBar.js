@@ -1,13 +1,8 @@
-const titles = [
-    'YOUR INFO',
-    'SELECT PLAN',
-    'ADD-ONS',
-    'SUMMARY'
-]
+
 export const SideBar = () => {
 
     return (<div>
-            {titles.map((elemt, index) => (<div>
+            {titles.map((elemt, index) => (<div key={index}>
                 <div>{index}</div>
                 <div>
                     <div>Step {index}</div>
@@ -16,3 +11,10 @@ export const SideBar = () => {
                 </div>))}
         </div>)
 }
+
+const titles = [
+    'YOUR INFO',
+    'SELECT PLAN',
+    'ADD-ONS',
+    'SUMMARY'
+]

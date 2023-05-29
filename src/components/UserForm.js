@@ -1,5 +1,5 @@
 export const UserForm = () => {
-    return (<form>
+    return (<>
         <label>Name
             <input></input>
         </label>
@@ -11,5 +11,5 @@ export const UserForm = () => {
         <label>Phone Number
             <input></input>
         </label>
-    </form>)
+    </>)
 }

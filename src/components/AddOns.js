@@ -19,14 +19,16 @@ const addons = [
     },
 ]
 export const AddOns = ({isYearly}) => {
+    const addonsJsx = addons.map((e, i)=> (
+    <div key={i}>
+        <input type="checkbox" name={e.title}/>
+        <div>
+            <label htmlFor={e.title}>{e.title}</label>
+            <p>{e.description}</p>
+        </div>
+        <div></div>
+    </div>));
     return (<>
-        <form>
-            <input type="checkbox" name="onlineService"/>
-            <label htmlFor="onlineService">Online service</label>
-            <input type="checkbox" name="largerStorage"/>
-            <label htmlFor="largerStorage">Larger storage</label>
-            <input type="checkbox" name="customizableProfile"/>
-            <label htmlFor="customizableProfile">Customizable profile</label>
-        </form>
+        {addonsJsx}
     </>)
 }

@@ -1,4 +1,30 @@
 import { useState } from "react"
+import { Card } from "./Card";
+
+
+export const PlanPicker = () => {
+    const [isYearly, setYearly] = useState(false);
+    const cardsjsx = cards.map(({
+        image,
+        title,
+        monthlyPrice,
+        yearlyPrice
+    }, index) => (<Card
+        key={index}
+        src={image}
+        title={title}
+        price={isYearly ? yearlyPrice:monthlyPrice}
+        isYearly={isYearly}/>))
+
+    return (<>
+        {cardsjsx}
+        <div>
+            <div>Monthly</div>
+            <button onClick={() => setYearly(state => !state)}></button>
+            <div>Yearly</div>
+        </div>
+    </>)
+}
 
 const cards = [
     {
@@ -20,26 +46,3 @@ const cards = [
         yearlyPrice: 150
     },
 ]
-export const PlanPicker = () => {
-    const [isYearly, setYearly] = useState(false);
-    const cardsjsx = cards.map(({
-        image,
-        title,
-        monthlyPrice,
-        yearlyPrice
-    }, index) => <Card
-        key={index}
-        src={image}
-        title={title}
-        price={isYearly ? yearlyPrice:monthlyPrice}
-        isYearly={isYearly}/>)
-
-    return (<>
-        {cardsjsx}
-        <div>
-            <div>Monthly</div>
-            <button onClick={setYearly(state => !state)}></button>
-            <div>Yearly</div>
-        </div>
-    </>)
-}
