@@ -1,14 +1,15 @@
+import style from '../styles/useform.module.css'
 export const UserForm = () => {
     return (<>
-        <label>Name
+        <label className={style.label}>Name
             <input></input>
         </label>
 
-        <label>Email Address
+        <label className={style.label}>Email Address
             <input></input>
         </label>
 
-        <label>Phone Number
+        <label className={style.label}>Phone Number
             <input></input>
         </label>
     </>)

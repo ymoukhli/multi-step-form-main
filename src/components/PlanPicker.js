@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Card } from "./Card";
-
+import style from "../styles/planPicker.module.css"
+import { yearContext } from "../App";
 
 export const PlanPicker = () => {
-    const [isYearly, setYearly] = useState(false);
+    const [isYearly, setYearly] = useContext(yearContext)
     const cardsjsx = cards.map(({
         image,
         title,
@@ -18,10 +19,10 @@ export const PlanPicker = () => {
 
     return (<>
         {cardsjsx}
-        <div>
-            <div>Monthly</div>
+        <div className={style.container}>
+            <div className={isYearly ? style.selected: style.timePlane}>Monthly</div>
             <button onClick={() => setYearly(state => !state)}></button>
-            <div>Yearly</div>
+            <div className={!isYearly ? style.selectedtimePlane: style.timePlane}>Yearly</div>
         </div>
     </>)
 }

@@ -10,6 +10,7 @@
 .button {
     padding: 10px 16px;
     border-radius: 8px;
+    border: none;
 }
 .nextButton {
     
@@ -27,7 +28,18 @@
     background: #160AFF;
     composes: button;
 }
+.padding {
+    margin: 18px;
+}
 .container {
     display: flex;
     justify-content: space-between;
+    composes: padding;
+}
+
+.oneItemContainer {
+    display: flex;
+    justify-content: flex-end;
+    composes: padding;
+
 }

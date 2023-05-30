@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { createContext, useState } from 'react';
 import './App.css';
 import { UserForm } from './components/UserForm';
 import { SideBar } from './components/SideBar';
@@ -7,20 +7,26 @@ import { PlanPicker } from './components/PlanPicker';
 import { AddOns } from './components/AddOns';
 import { Nav } from './components/Nav';
 import style from './styles/app.module.css'
+export const yearContext = createContext();
 function App() {  
   const [currentStep, setCurrentStep] = useState(2);
+  const isYearly = useState(false);
+
   const {title, description, component} = steps[currentStep];
   return (
-    <>
-      <SideBar />
+    <yearContext.Provider value={isYearly}>
+      <SideBar step={currentStep}/>
       <div className={style.container}>
+        <div className={style.contentContainer}>
+
         <Title title={title} description={description}/>
-        <form>
+        <form className={style.form}>
           {component}
         </form>
+        </div>
       </div>
         <Nav step={currentStep} setStep={setCurrentStep}/>
-    </>
+    </yearContext.Provider>
   );
 }
 

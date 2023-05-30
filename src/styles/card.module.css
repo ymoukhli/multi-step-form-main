@@ -1,0 +1,37 @@
+.image {
+    width: 40px;
+    height: 40px;
+    margin: 15px;
+    margin-right: 18px;
+}
+
+.container {
+
+    border: 1px solid #9699AB;
+    border-radius: 12px;
+    display: flex;
+    height: 101px;
+    margin-bottom: 15px;
+    
+}
+
+.selectedContainer {
+    composes: container;
+    background: #F0F6FF;
+    border: 1px solid #000000;
+}
+
+.h3 {
+    margin: 15px 0px 6px;
+    font-family: ubuntu_md;
+}
+
+.price {
+    margin: 6px 0px;
+    color: #96A0AB;
+    font-size: 14px;
+}
+
+.priceInfo {
+    font-size: 14px;
+}

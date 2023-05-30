@@ -1,0 +1,18 @@
+.container {
+    display:flex;
+    background-color: #f0f6ff;
+    justify-content: center;
+    padding: 12px 67px 17px;
+    margin: 18px 0px 37px;
+    gap: 19px;
+}
+
+.selectedtimePlane {
+    font-family: ubuntu_md;
+    color: #03275c;
+}
+.timePlane {
+    font-family: ubuntu_md;
+    color: rgba(0, 0, 0, 0.4);
+    
+}

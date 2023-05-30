@@ -1,10 +1,12 @@
+import style from '../styles/sideBar.module.css';
 
-export const SideBar = () => {
+export const SideBar = ({step}) => {
 
-    return (<div>
+    return (<div className={style.container}>
+            <div className={style.backgroundimg}></div>
             {titles.map((elemt, index) => (<div key={index}>
-                <div>{index}</div>
-                <div>
+                <div className={step === index ? style.selected:style.cercle}>{index}</div>
+                <div className={style.stepDetail}>
                     <div>Step {index}</div>
                     <div>{elemt}</div>
                 </div>
