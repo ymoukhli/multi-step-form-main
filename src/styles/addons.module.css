@@ -1,0 +1,49 @@
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #D6D9E6;
+    margin-bottom: 11px;
+    border-radius: 6px;
+}
+
+.container:hover {
+    border: 1.5px solid #03275C;
+}
+
+.selectedContainer {
+    composes: container;
+
+    background: #F0F6FF;
+    border: 1.5px solid #96A0AB;
+}
+
+.label {
+    font-family: ubuntu_md;
+    font-size: 14px;
+}
+
+.description {
+    font-size: 12px;
+    font-family: ubuntu;
+    color: #96A0AB;
+    margin-top: 4px;
+}
+
+.descriptionContainer { 
+    margin-bottom: 17px;
+    margin-top: 12px;
+    margin-left: 18px;
+}
+.price {
+    position: absolute;
+    right: 18px;
+    font-family: ubuntu_md;
+    font-size:14px;
+    color: #03275C;
+}
+
+.selectedPrice {
+    composes: price;
+    color: #160AFF;
+}
