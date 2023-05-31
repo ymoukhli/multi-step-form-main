@@ -4,8 +4,8 @@ export const Nav = ({step, setStep}) => {
     const canGoBack = step > 0;
     return (
     <div className={step === 0 ? style.oneItemContainer: style.container}>
-        {canGoBack && <button className={style.backButton} onClick={() => setStep(step => step - 1)}>Go back</button>}
-        {!canSubmit && <button className={style.nextButton} onClick={() => setStep(step => step + 1)}>Next Step</button>}
-        {canSubmit && <button className={style.continueButton}>Continue</button>}
+        {canGoBack && <button type='button' className={style.backButton} onClick={() => setStep(step => step - 1)}>Go back</button>}
+        {!canSubmit && <button type='button' className={style.nextButton} onClick={() => setStep(step => step + 1)}>Next Step</button>}
+        {canSubmit && <button type='button' className={style.continueButton}>Continue</button>}
     </div>)
 }

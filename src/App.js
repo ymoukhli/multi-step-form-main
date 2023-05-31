@@ -3,18 +3,19 @@ import './App.css';
 import { UserForm } from './components/UserForm';
 import { SideBar } from './components/SideBar';
 import { Title } from './components/Title';
-import { PlanPicker } from './components/PlanPicker';
+import { PlanPicker, cards } from './components/PlanPicker';
 import { AddOns } from './components/AddOns';
 import { Nav } from './components/Nav';
+import { mapCardsToState } from './util'
 import style from './styles/app.module.css'
-export const yearContext = createContext();
+export const appContext = createContext();
 function App() {  
-  const [currentStep, setCurrentStep] = useState(2);
+  const [currentStep, setCurrentStep] = useState(0);
   const isYearly = useState(false);
-
+  const plan = useState(mapCardsToState(cards))
   const {title, description, component} = steps[currentStep];
   return (
-    <yearContext.Provider value={isYearly}>
+    <appContext.Provider value={{isYearly, plan}}>
       <SideBar step={currentStep}/>
       <div className={style.container}>
         <div className={style.contentContainer}>
@@ -22,11 +23,11 @@ function App() {
         <Title title={title} description={description}/>
         <form className={style.form}>
           {component}
+          <Nav step={currentStep} setStep={setCurrentStep}/>
         </form>
         </div>
       </div>
-        <Nav step={currentStep} setStep={setCurrentStep}/>
-    </yearContext.Provider>
+    </appContext.Provider>
   );
 }
 

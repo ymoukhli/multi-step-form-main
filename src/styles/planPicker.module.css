@@ -2,7 +2,7 @@
     display:flex;
     background-color: #f0f6ff;
     justify-content: center;
-    padding: 12px 67px 17px;
+    padding: 12px 0px 17px;
     margin: 18px 0px 37px;
     gap: 19px;
 }
@@ -14,5 +14,28 @@
 .timePlane {
     font-family: ubuntu_md;
     color: rgba(0, 0, 0, 0.4);
-    
+}
+
+.switch {
+    position: relative;
+    width: 38px;
+    height: 17px;
+    border: none;    
+    /* dark blue */
+    background: #03275C;
+    border-radius: 50px;
+}
+.switch > div {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #f0f6ff;
+    top: 3px;
+    left: 3px;
+    transition: all 0.2s linear;
+}
+
+.toggled > div{
+    left: 23px;
 }

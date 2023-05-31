@@ -1,6 +1,6 @@
 import style from '../styles/card.module.css'
-export const Card = ({src, title, price, isYearly}) => {
-    return (<div className={style.container}>
+export const Card = ({src, title, price, isYearly,onClick}) => {
+    return (<div className={style.container} onClick={onClick()}>
         <img className={style.image} src={src} alt=''/>
         <div>
 

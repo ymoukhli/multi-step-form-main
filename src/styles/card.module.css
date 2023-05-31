@@ -15,6 +15,9 @@
     
 }
 
+.container:hover {
+    border: 1px solid #000;
+}
 .selectedContainer {
     composes: container;
     background: #F0F6FF;
