@@ -1,0 +1,47 @@
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #D6D9E6;
+}
+
+.container:hover {
+    border: 1.5px solid #03275C;
+}
+
+.selectedContainer {
+    composes: container;
+
+    background: #F0F6FF;
+    border: 1.5px solid #96A0AB;
+    border-radius: 6px;
+}
+
+.label {
+    font-family: ubuntu_md;
+    font-size: 14px;
+}
+
+.description {
+    font-size: 12px;
+    font-family: ubuntu;
+}
+
+.price {
+    position: absolute;
+    right: 18px;
+    font-family: ubuntu_md;
+    font-size:14px;
+    color: #03275C;
+}
+
+.selectedPrice {
+    composes: price;
+    color: #160AFF;
+}
+
+.checkbox {
+    margin: 13px;
+    width: 19px;
+    height: 19px;
+}

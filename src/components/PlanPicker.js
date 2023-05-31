@@ -7,6 +7,9 @@ import { resetSelection } from "../util";
 export const PlanPicker = () => {
     const [isYearly, setYearly] = useContext(appContext).isYearly
     const [plan, setPlan] = useContext(appContext).plan;
+    useEffect(() => {
+
+    }, [])
     const cardsjsx = cards.map(({
             image,
             title,
@@ -15,6 +18,7 @@ export const PlanPicker = () => {
         }, index) => (<Card
             onClick={() => setPlan(state => resetSelection(state, index))}
             key={index}
+            selected={plan[index].selected}
             index={index}
             src={image}
             title={title}
