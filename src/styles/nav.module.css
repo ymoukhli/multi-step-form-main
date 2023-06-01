@@ -29,16 +29,21 @@
     composes: button;
 }
 .padding {
-    margin: 18px;
+    padding: 18px;
 }
 .container {
+    position:fixed;
+    bottom: 0;
+    left:0;
+    right:0;
     display: flex;
     justify-content: space-between;
+    background-color: white;
     composes: padding;
 }
 
 .oneItemContainer {
-    display: flex;
+    composes: container;
     justify-content: flex-end;
     composes: padding;
 

@@ -1,4 +1,5 @@
 import style from '../styles/card.module.css'
+import { Price } from './Price'
 export const Card = ({
     src,
     title,
@@ -12,7 +13,11 @@ export const Card = ({
         <img className={style.image} src={src} alt=''/>
         <div>
             <h3 className={style.h3}>{title}</h3>
-            <p className={style.price}>${price}/{isYearly?'yr':'mo'}</p>
+            <Price
+                style={style.price}
+                price={price}
+                isYearly={isYearly}
+            />
             {isYearly && <p className={style.priceInfo}>2 months free</p>}
         </div>
     </div>)

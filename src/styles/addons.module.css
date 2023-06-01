@@ -3,6 +3,8 @@
     display: flex;
     align-items: center;
     border: 1.5px solid #D6D9E6;
+    margin-bottom: 11px;
+    border-radius: 6px;
 }
 
 .container:hover {
@@ -14,7 +16,6 @@
 
     background: #F0F6FF;
     border: 1.5px solid #96A0AB;
-    border-radius: 6px;
 }
 
 .label {
@@ -25,8 +26,15 @@
 .description {
     font-size: 12px;
     font-family: ubuntu;
+    color: #96A0AB;
+    margin-top: 4px;
 }
 
+.descriptionContainer { 
+    margin-bottom: 17px;
+    margin-top: 12px;
+    margin-left: 18px;
+}
 .price {
     position: absolute;
     right: 18px;
@@ -38,10 +46,4 @@
 .selectedPrice {
     composes: price;
     color: #160AFF;
-}
-
-.checkbox {
-    margin: 13px;
-    width: 19px;
-    height: 19px;
 }

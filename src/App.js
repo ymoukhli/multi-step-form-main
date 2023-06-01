@@ -8,6 +8,7 @@ import { AddOns, addonsData } from './components/AddOns';
 import { Nav } from './components/Nav';
 import { mapCardsToState,mapAddonsToState } from './util'
 import style from './styles/app.module.css'
+import { Summary } from './components/Summary';
 export const appContext = createContext();
 function App() {  
   const [currentStep, setCurrentStep] = useState(2);
@@ -24,10 +25,10 @@ function App() {
         <Title title={title} description={description}/>
         <form className={style.form}>
           {component}
-          <Nav step={currentStep} setStep={setCurrentStep}/>
         </form>
         </div>
       </div>
+      <Nav step={currentStep} setStep={setCurrentStep}/>
     </appContext.Provider>
   );
 }
@@ -53,6 +54,6 @@ const steps = [
     {
       title: "Finishing up",
       description: "Double-check everything looks OK before confirming",
-      component: <UserForm/>
+      component: <Summary/>
     },
   ]
