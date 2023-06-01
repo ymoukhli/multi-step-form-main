@@ -9,13 +9,25 @@ import { Nav } from './components/Nav';
 import { mapCardsToState,mapAddonsToState } from './util'
 import style from './styles/app.module.css'
 import { Summary } from './components/Summary';
+import { useForm } from 'react-hook-form';
+
 export const appContext = createContext();
-function App() {  
-  const [currentStep, setCurrentStep] = useState(2);
+
+function App() { 
+
+  const { handleSubmit, formState: {errors}, reset } = useForm();
+
+  const [currentStep, setCurrentStep] = useState(0);
   const addons = useState(mapAddonsToState(addonsData));
   const isYearly = useState(false);
   const plan = useState(mapCardsToState(cards))
   const {title, description, component} = steps[currentStep];
+
+  const onSubmi = (data) => {
+    console.log(data)
+    reset();
+  };
+
   return (
     <appContext.Provider value={{isYearly, plan, addons}}>
       <SideBar step={currentStep}/>
@@ -23,7 +35,7 @@ function App() {
         <div className={style.contentContainer}>
 
         <Title title={title} description={description}/>
-        <form className={style.form}>
+        <form id="theform" className={style.form} onSubmit={handleSubmit(onSubmi)}>
           {component}
         </form>
         </div>

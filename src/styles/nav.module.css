@@ -26,6 +26,7 @@
 
 .continueButton {
     background: #160AFF;
+    color: #F0F6FF;
     composes: button;
 }
 .padding {
