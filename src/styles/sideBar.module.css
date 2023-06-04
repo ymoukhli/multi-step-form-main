@@ -1,7 +1,6 @@
 .container {
     display: flex;
     justify-content: center;
-    gap: 16px;
     margin-top: 29px;
     margin-bottom:30px;
 }
@@ -51,7 +50,13 @@
     background-image: url('../../public/images/bg-sidebar-mobile.svg');
 }
 
-@media  screen and (min-width: 1280px) {
+
+.contentContainer {
+    gap: 17px;
+    display: flex;
+}
+
+@media  screen and (min-width: 1024px) {
     .stepDetail {
         display: block;
     }
@@ -68,6 +73,7 @@
         display: block;
     }
     .contentContainer {
+        display: block;
         margin-top: 60px;
         margin-left: 45px
     }

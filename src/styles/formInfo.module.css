@@ -1,0 +1,100 @@
+.span {
+    display: block;
+    font-size: 14px;
+}
+
+.contentContainer {
+    display: grid;
+    grid-template-columns: 125px 1fr;
+    width: 100%;
+    margin-bottom: 12px;
+    margin: 20px 20px 20px 23px;
+}
+
+.container {
+    width: 95%;
+    margin:0;
+}
+
+.main {
+    box-sizing: border-box;
+
+    /* height: 294px; */
+    /* magnolia */
+    background: #F0F6FF;
+    /* marine blue */
+    border: 1.5px solid #96A0AB;
+    border-radius: 6px;
+    margin-top: 49px;
+}
+
+.second {
+    color: #96A0AB;
+    font-family: ubuntu_md;
+    font-size: 12px;
+}
+
+.value {
+    font-family: ubuntu_md;
+    list-style: none;
+}
+
+.formInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FAFBFF;
+    box-shadow: 0px 0px 95px -51px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin: 100px auto;
+}
+
+.title {
+    color: #03275C;
+        font-size: 24px;
+        font-family: ubuntu_bd;
+        margin-top: 37px;
+}
+
+.description {
+    color: #96A0AB;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.resetButton {
+    color: rgba(0, 0, 0, 0.4);
+    background: none;
+    border: none;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.resetButton:hover {
+    color: #03275C;
+}
+
+@media screen and (min-width: 1024px) {
+    .title {
+        font-size: 36px;
+        margin-top: 37px;
+    }
+
+    .formInfo {
+        width: 945px;
+        height: 604px;
+        margin: 100px auto;
+    }
+    .main {
+        width: 543.29px;
+    }
+    .container {
+        margin: 33px 0px 33px 43px;
+    }
+    .second {
+        font-size: 14px;
+    }
+    .resetButton {
+        margin-top: 77px;
+    }
+}

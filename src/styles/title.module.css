@@ -8,8 +8,7 @@
     color: #96A0AB;
     margin-bottom: 36px;
 }
-
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
     .title {
         font-size: 36px;
         padding-top: 41px;
@@ -19,3 +18,4 @@
         margin-bottom: 0px;
     }
 }
+

@@ -27,16 +27,14 @@ export const mapAddonsToState = (obj) => obj.map(e => ({
 }))
 
 export const getTotalPrice = (activeAddons, activePlan) => {
-    if (!activeAddons || !activeAddons) return ;
+    if (!activeAddons || !activePlan) return ;
 
     let monthlyPrice = 0;
     let yearlyPrice = 0;
     monthlyPrice += +activePlan.monthlyPrice;
     yearlyPrice += +activePlan.yearlyPrice;
-    console.log(+activePlan.monthlyPrice);
 
     activeAddons.forEach(e => {
-        console.log(+e.monthlyPrice);
         monthlyPrice += +e.monthlyPrice
         yearlyPrice += +e.yearlyPrice
     })

@@ -2,15 +2,13 @@
     background: #FFFFFF;
     box-shadow: 0px 0px 25px -7px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    /* width: 90vw; */
-    width: 100%;
+    width: 90vw;
     margin: 0 auto;
 }
 
 .contentContainer {
-    /* padding: 38px 18px 42px; */
+    padding: 38px 18px 42px;
     display: flex;
-    width: 100%;
     flex-direction: column;
 }
 
@@ -19,7 +17,7 @@
     flex-direction: column;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
     .main {
         display: flex;
         width: 945px;
@@ -38,6 +36,7 @@
         margin:0;
     }
     .contentContainer {
+        padding: 0;
         margin-left: 117px;
         width: auto;
     }

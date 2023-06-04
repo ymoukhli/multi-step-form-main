@@ -10,6 +10,7 @@ import { mapCardsToState,mapAddonsToState } from './util'
 import style from './styles/app.module.css'
 import { Summary } from './components/Summary';
 import { useForm } from 'react-hook-form';
+import { FormInfo } from './components/FormInfo';
 
 export const appContext = createContext();
 
@@ -17,36 +18,38 @@ function App() {
 
   const useform = useForm();
   const {handleSubmit } = useform;
-  const [currentStep, setCurrentStep] = useState(2);
+  const [currentStep, setCurrentStep] = useState(0);
   const addons = useState(mapAddonsToState(addonsData));
   const isYearly = useState(false);
   const plan = useState(mapCardsToState(cards))
   const {title, description, component} = steps[currentStep];
+  const [data, setData] = useState(null);
 
-  const onSubmit = (data) => {
-    data.plan = plan[0].find(e => e.selected === true)?.plan || null;
-    data.addons = addons[0].filter(e => e.selected === true).map(e => (e.addon)) || null;
-    data.paymentPlan = isYearly? "yearly" : "monthly"
-    console.log(data);
-
+  const onSubmit = (formData) => {
+    formData.plan = plan[0].find(e => e.selected === true)?.plan || null;
+    formData.addons = addons[0].filter(e => e.selected === true).map(e => (e.addon)) || null;
+    formData.paymentPlan = isYearly? "yearly" : "monthly"
+    setData(formData);
+    console.log(formData);
   };
 
   return (
-    <appContext.Provider value={{isYearly, plan, addons, useform}}>
+    <appContext.Provider value={{isYearly, plan, addons, useform, setData, setCurrentStep}}>
+        {data ? <FormInfo data={data}/> : <>
       <div className={style.main}>
+        <SideBar step={currentStep}/>
+          <div className={style.container}>
+            <div className={style.contentContainer}>
 
-      <SideBar step={currentStep}/>
-      <div className={style.container}>
-        <div className={style.contentContainer}>
-
-        <Title title={title} description={description}/>
-        <form id="theform" className={style.form} onSubmit={handleSubmit(onSubmit)}>
-          {component}
-        </form>
-        </div>
-      <Nav step={currentStep} setStep={setCurrentStep}/>
+            <Title title={title} description={description}/>
+            <form id="theform" className={style.form} onSubmit={handleSubmit(onSubmit)}>
+              {component}
+            </form>
+            </div>
+          <Nav step={currentStep} setStep={setCurrentStep}/>
+          </div>
       </div>
-      </div>
+        </>}
     </appContext.Provider>
   );
 }

@@ -38,7 +38,7 @@
 .priceInfo {
     font-size: 14px;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
     .container {
         height: 163px;
         width: 136px;

@@ -79,7 +79,7 @@
     color: #96A0AB;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
 
     .main {
         margin-top: 31px;
