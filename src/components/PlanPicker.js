@@ -25,8 +25,10 @@ export const PlanPicker = () => {
             price={isYearly ? yearlyPrice:monthlyPrice}
             isYearly={isYearly}/>))
 
-    return (<>
-        {cardsjsx}
+    return (<div className={style.main}>
+        <div className={style.cardsContainer}>
+            {cardsjsx}
+        </div>
         <div className={style.container}>
             <div className={!isYearly ? style.selectedtimePlane: style.timePlane}>Monthly</div>
             <button className={!isYearly ? `${style.switch}`:`${style.switch} ${style.toggled}`} type="button" onClick={() => setYearly(state => !state)}>
@@ -34,7 +36,7 @@ export const PlanPicker = () => {
             </button>
             <div className={isYearly ? style.selectedtimePlane: style.timePlane}>Yearly</div>
         </div>
-    </>)
+    </div>)
 }
 
 export const cards = [

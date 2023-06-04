@@ -11,7 +11,7 @@ export const Card = ({
     const containercss = selected ? style.selectedContainer: style.container;
     return (<div className={containercss} onClick={() => onClick()}>
         <img className={style.image} src={src} alt=''/>
-        <div>
+        <div className={style.detail}>
             <h3 className={style.h3}>{title}</h3>
             <Price
                 style={style.price}

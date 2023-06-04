@@ -39,3 +39,14 @@
 .toggled > div{
     left: 23px;
 }
+@media screen and (min-width: 1280px) {
+    .cardsContainer {
+        display: flex;
+        gap: 18px;
+    }
+
+    .main {
+        margin-top: 31px;
+        margin-right: 81px;
+    }
+}

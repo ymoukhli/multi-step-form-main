@@ -23,7 +23,7 @@ export const Summary = () => {
         </div>
     ));
     return (
-        <>
+        <div className={style.main}>
             <div className={style.container}>
                 <div className={style.containerHolder}>
                     {activePlan && <div className={style.planContainer}>
@@ -51,6 +51,6 @@ export const Summary = () => {
                     isYearly={isYearly}
                 />
             </div>
-        </>
+        </div>
     )
 }

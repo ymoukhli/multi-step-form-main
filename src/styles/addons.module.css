@@ -47,3 +47,22 @@
     composes: price;
     color: #160AFF;
 }
+
+@media screen and (min-width: 1280px) {
+    .lable {
+        font-size: 16px;
+    }
+    .checkBox {
+        margin: 31px 30px 30px 25px;
+    }
+    .container {
+        width: 401px;
+    }
+    .descriptionContainer {
+        margin: 0;
+    }
+    .main {
+        margin-top: 31px;
+        margin-right: 81px;
+    }
+}

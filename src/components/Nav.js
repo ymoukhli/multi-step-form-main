@@ -7,6 +7,5 @@ export const Nav = ({step, setStep}) => {
         {canGoBack && <button type='button' className={style.backButton} onClick={() => setStep(step => step - 1)}>Go back</button>}
         {!canSubmit && <button type='button' className={style.nextButton} onClick={() => setStep(step => step + 1)}>Next Step</button>}
         {canSubmit && <button form='theform' className={style.continueButton}>Continue</button>}
-        {<button form='theform' className={style.continueButton}>Continue</button>}
     </div>)
 }

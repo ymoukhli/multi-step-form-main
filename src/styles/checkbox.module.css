@@ -1,6 +1,6 @@
 .size {
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
 }
 .container {
     position: relative;
@@ -60,11 +60,11 @@
   /* Style the checkmark/indicator */
   .container .checkmark:after {
     left: 6px;
-    top: 2px;
-    width: 4px;
-    height: 9px;
+    top: 3px;
+    width: 3px;
+    height: 7px;
     border: solid white;
-    border-width: 0 3px 3px 0;
+    border-width: 0 2px 2px 0;
     -webkit-transform: rotate(38deg);
     -ms-transform: rotate(38deg);
     transform: rotate(38deg);

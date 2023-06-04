@@ -1,27 +1,52 @@
 import { useForm } from 'react-hook-form'
 import style from '../styles/useform.module.css'
-
+import { useContext } from 'react';
+import { appContext } from '../App';
+import { InputField } from './InputField';
 
 export const UserForm = () => {
 
-    const {register, formState: {errors}} = useForm({
-    });
-    return (<>
-        <label className={style.label}>Name
-            <input name='name' {...register("name", {required: true})}/>
-        </label>
+    const {register, formState: {errors}} = useContext(appContext)?.useform;
+    return (<div className={style.main}>
 
-        <label className={style.label}>Email Address
-            <input
-                {...register("email", {
-                    required: "email is required"
-            })}/>
-            {errors.email && <span role="alert">This field is required</span>}
-        </label>
+        <InputField
+            name="name"
+            label="Name"
+            options={{
+                required: "name is required",
+                maxLength: {
+                    value: 40,
+                    message: "name should not exceed 40 characters"
+                },
+                pattern: {
+                    value: /^[A-Za-z][A-Za-z0-9_ ]/,
+                    message: "should only containe letter and spaces"
+                }
+            }}
+        />
 
-        <label className={style.label}>Phone Number
-            <input {...register("phoneNumber")}/>
-        </label>
-        <button type='submit'>submit</button>
-    </>)
+        <InputField
+            name="email"
+            label="Email Address"
+            options={{
+                required: "email is required",
+                maxLength: {
+                    value: 40,
+                    message: "email should not exceed 40 characters"
+                }
+            }}
+        />
+
+
+        <InputField
+            name="phoneNumber"
+            label="Phone Number"
+            options={{
+                pattern: {
+                    value: /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/,
+                    message: "phone number is invalid"
+                }
+            }}
+        />
+    </div>)
 }

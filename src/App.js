@@ -15,32 +15,38 @@ export const appContext = createContext();
 
 function App() { 
 
-  const { handleSubmit, formState: {errors}, reset } = useForm();
-
-  const [currentStep, setCurrentStep] = useState(0);
+  const useform = useForm();
+  const {handleSubmit } = useform;
+  const [currentStep, setCurrentStep] = useState(2);
   const addons = useState(mapAddonsToState(addonsData));
   const isYearly = useState(false);
   const plan = useState(mapCardsToState(cards))
   const {title, description, component} = steps[currentStep];
 
-  const onSubmi = (data) => {
-    console.log(data)
-    reset();
+  const onSubmit = (data) => {
+    data.plan = plan[0].find(e => e.selected === true)?.plan || null;
+    data.addons = addons[0].filter(e => e.selected === true).map(e => (e.addon)) || null;
+    data.paymentPlan = isYearly? "yearly" : "monthly"
+    console.log(data);
+
   };
 
   return (
-    <appContext.Provider value={{isYearly, plan, addons}}>
+    <appContext.Provider value={{isYearly, plan, addons, useform}}>
+      <div className={style.main}>
+
       <SideBar step={currentStep}/>
       <div className={style.container}>
         <div className={style.contentContainer}>
 
         <Title title={title} description={description}/>
-        <form id="theform" className={style.form} onSubmit={handleSubmit(onSubmi)}>
+        <form id="theform" className={style.form} onSubmit={handleSubmit(onSubmit)}>
           {component}
         </form>
         </div>
-      </div>
       <Nav step={currentStep} setStep={setCurrentStep}/>
+      </div>
+      </div>
     </appContext.Provider>
   );
 }

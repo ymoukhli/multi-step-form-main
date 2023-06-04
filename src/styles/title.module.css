@@ -8,3 +8,14 @@
     color: #96A0AB;
     margin-bottom: 36px;
 }
+
+@media screen and (min-width: 1280px) {
+    .title {
+        font-size: 36px;
+        padding-top: 41px;
+    }
+
+    .description {
+        margin-bottom: 0px;
+    }
+}

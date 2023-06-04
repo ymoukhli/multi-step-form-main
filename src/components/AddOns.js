@@ -18,7 +18,9 @@ export const AddOns = () => {
             className={containerCss}
             key={i}
         >
-            <CheckBox lable={e.title} selected={selected}/>
+            <div className={style.checkBox}>
+                <CheckBox lable={e.title} selected={selected}/>
+            </div>
             <div className={style.descriptionContainer}>
                 <label className={style.label} htmlFor={e.title}>{e.title}</label>
                 <p className={style.description}>{e.description}</p>
@@ -31,9 +33,9 @@ export const AddOns = () => {
                 />
         </div>)
         });
-    return (<>
+    return (<div className={style.main}>
         {addonsJsx}
-    </>)
+    </div>)
 }
 
 export const addonsData = [

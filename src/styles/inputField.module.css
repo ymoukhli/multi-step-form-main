@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 9px 0 20px;
+}
+
+.inputField {
+    margin: 6px 0;
+    padding: 10px;
+    line-height: 20px;
+    border: 1px solid #D6D9E6;
+    border-radius: 6px;
+    font-family: ubuntu_md;
+    font-size: 16px;
+}
+
+.defaultError {
+    order: 1;
+    font-family: ubuntu_md;
+    font-size: 14px;
+    float: right;
+    color: red;
+    padding-right: 10px;
+}
+
+.label {
+    display: block;
+    color: #03275C;
+}

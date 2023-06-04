@@ -31,6 +31,16 @@
     padding-top: 8px;
 }
 
+.stepIndex {
+    color: #adbeff;
+    font-family: ubuntu_md;
+    margin-bottom: 4px;
+}
+
+.description {
+    color: #FAFBFF;
+    font-family: ubuntu_bd;
+}
 .backgroundimg {
     position: absolute;
     top:0;
@@ -39,4 +49,35 @@
     z-index: -1;
     height: 172px;
     background-image: url('../../public/images/bg-sidebar-mobile.svg');
+}
+
+@media  screen and (min-width: 1280px) {
+    .stepDetail {
+        display: block;
+    }
+    .backgroundimg {
+        display: none;
+    }
+    .container {
+        height: 568px;
+        margin: 18px 0px 18px 15px;
+        width: 274px;
+        border-radius: 8px;
+        background-image: url('../../public/images/bg-sidebar-desktop.svg');
+        flex-direction: column;
+        display: block;
+    }
+    .contentContainer {
+        margin-top: 60px;
+        margin-left: 45px
+    }
+
+    .dataContainer {
+        display: flex;
+        margin-bottom: 31px;
+
+    }
+    .cercle {
+        margin-right: 17px;
+    }
 }

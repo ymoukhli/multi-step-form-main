@@ -4,13 +4,16 @@ export const SideBar = ({step}) => {
 
     return (<div className={style.container}>
             <div className={style.backgroundimg}></div>
-            {titles.map((elemt, index) => (<div key={index}>
+            <div className={style.contentContainer}>
+
+            {titles.map((elemt, index) => (<div className={style.dataContainer} key={index}>
                 <div className={step === index ? style.selected:style.cercle}>{index}</div>
                 <div className={style.stepDetail}>
-                    <div>Step {index}</div>
-                    <div>{elemt}</div>
+                    <div className={style.stepIndex}>Step {index}</div>
+                    <div className={style.description}>{elemt}</div>
                 </div>
                 </div>))}
+            </div>
         </div>)
 }
 
