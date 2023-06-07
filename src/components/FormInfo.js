@@ -21,7 +21,7 @@ export const FormInfo = ({data}) => {
         </div>)                
     return (
     <div className={style.formInfo}>
-        <div className={style.title}>thank you for submitting</div>
+        <div className={style.title}>Thank you for submitting</div>
         <div className={style.description}>this is the data that you will submit</div>
         <div className={style.main}>
             <div className={style.container}>
