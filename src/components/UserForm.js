@@ -1,12 +1,8 @@
-import { useForm } from 'react-hook-form'
 import style from '../styles/useform.module.css'
-import { useContext } from 'react';
-import { appContext } from '../App';
 import { InputField } from './InputField';
 
 export const UserForm = () => {
 
-    const {register, formState: {errors}} = useContext(appContext)?.useform;
     return (<div className={style.main}>
 
         <InputField
@@ -33,6 +29,10 @@ export const UserForm = () => {
                 maxLength: {
                     value: 40,
                     message: "email should not exceed 40 characters"
+                },
+                pattern: {
+                    value : /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                    message: "please entre a valid email ex: email@test.com"
                 }
             }}
         />

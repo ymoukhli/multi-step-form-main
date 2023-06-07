@@ -11,10 +11,10 @@ export const FormInfo = ({data}) => {
     const [,setAddona] = context.addons;
     const [,setPlan] = context.plan;
 
-    const dataJsx = typeof data === "object" && Object.entries(data).map(([key, value]) => <div className={style.contentContainer}>
+    const dataJsx = typeof data === "object" && Object.entries(data).map(([key, value]) => <div key={key} className={style.contentContainer}>
             <span className={style.span}>{key}</span>{Array.isArray(value) ?
                                 <ul className={style.value}>
-                                    {value.length > 0 ?value.map(e => <li className={style.second}>{e}</li>):<li className={style.second}>---</li>}
+                                    {value.length > 0 ?value.map(e => <li key={e} className={style.second}>{e}</li>):<li className={style.second}>---</li>}
                                 </ul>
                                 :
                                 <span className={`${style.span} ${style.second}`}>{value ? value : '---'}</span>}

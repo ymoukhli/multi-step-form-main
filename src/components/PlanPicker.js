@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext } from "react"
 import { Card } from "./Card";
 import style from "../styles/planPicker.module.css"
 import { appContext } from "../App";
@@ -7,9 +7,7 @@ import { resetSelection } from "../util";
 export const PlanPicker = () => {
     const [isYearly, setYearly] = useContext(appContext).isYearly
     const [plan, setPlan] = useContext(appContext).plan;
-    useEffect(() => {
 
-    }, [])
     const cardsjsx = cards.map(({
             image,
             title,

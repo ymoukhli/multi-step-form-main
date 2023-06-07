@@ -12,7 +12,7 @@ export const Summary = () => {
     const activeAddons = addons.filter(e => e.selected);
     const [monthlyTotalPrice, yearlyTotalPrice] = getTotalPrice(activeAddons, activePlan, isYearly)
     const addonsJsx = activeAddons.map(e => (
-        <div className={style.addonContainer}>
+        <div key={e.addon} className={style.addonContainer}>
             <div className={style.selectedAddon}>{e.addon}</div>
             <Price 
                 price={isYearly ? e.yearlyPrice: e.monthlyPrice}
