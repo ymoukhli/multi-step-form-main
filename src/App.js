@@ -74,7 +74,7 @@ const steps = [
     },
     {
       title: "Finishing up",
-      description: "Double-check everything looks OK before confirming",
+      description: "Double-check everything looks good",
       component: <Summary/>
     },
   ]
