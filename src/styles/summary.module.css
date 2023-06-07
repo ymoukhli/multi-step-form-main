@@ -45,6 +45,9 @@
     font-family: 'ubuntu_md';
     color:#03275C;
 }
+.change:hover {
+    color:#03275C;
+}
 .change {
     background: none;
     border: none;

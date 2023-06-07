@@ -5,9 +5,10 @@ import { Price } from "./Price"
 import { getTotalPrice } from "../util"
 
 export const Summary = () => {
-    const [plan] = useContext(appContext).plan;
-    const [isYearly] = useContext(appContext).isYearly;
-    const [addons] = useContext(appContext).addons;
+    const context = useContext(appContext)
+    const [plan] = context.plan;
+    const [isYearly] = context.isYearly;
+    const [addons] = context.addons;
     const activePlan = plan.find(e => e.selected === true);
     const activeAddons = addons.filter(e => e.selected);
     const [monthlyTotalPrice, yearlyTotalPrice] = getTotalPrice(activeAddons, activePlan, isYearly)
@@ -29,11 +30,12 @@ export const Summary = () => {
                     {activePlan && <div className={style.planContainer}>
                         <div>
                             <div className={style.plan}>{activePlan.plan} {isYearly ? " (Yearly)": " (Monthly)"}</div>
-                            <button type="button" className={style.change}>Change</button>
+                            <button type="button" className={style.change} onClick={() => {context.setCurrentStep(1)}}>Change</button>
                         </div>
                         <Price
                             style={style.planPrice}
                             plus="+"
+                            isYearly={isYearly}
                             price={isYearly ? activePlan.yearlyPrice: activePlan.monthlyPrice}
                             />
                     </div>}
